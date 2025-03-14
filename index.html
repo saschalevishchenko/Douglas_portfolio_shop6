@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="icons/dooglas_icon.png" />
+    <title>Хайлайтер Glow</title>
+    <link rel="stylesheet" href="css/style.min.css" />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="container">
+        <div class="logo">
+          <a href="#"
+            ><img class="logo" src="img/dooglas_logo.png" alt="dooglas_logo"
+          /></a>
+        </div>
+        <div class="icons">
+          <span class="icon search-icon" onclick="openSearch()"
+            ><img
+              src="icons/icons8-search-50.png"
+              alt="magnifying-glass"
+              style="width: 40px"
+          /></span>
+          <span class="icon user-icon" onclick="toggleUserMenu()"
+            ><img
+              src="icons/icons8-user-icon-48.png"
+              alt="user-icon"
+              style="width: 40px"
+          /></span>
+        </div>
+
+        <button class="menu-toggle" onclick="toggleMenu()">
+          <img
+            src="icons/icons8-burger-91.png"
+            alt="burger"
+            style="width: 40px"
+          />
+        </button>
+
+        <!-- Модальное окно для поиска -->
+        <div id="searchModal" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeSearch()">&times;</span>
+            <h2>Поиск</h2>
+            <input type="text" placeholder="Введите запрос..." />
+          </div>
+        </div>
+
+        <!-- Меню пользователя -->
+        <div id="userMenu" class="menu">
+          <h3>Меню пользователя</h3>
+          <ul>
+            <li>Профиль</li>
+            <li>Настройки</li>
+            <li>Выйти</li>
+          </ul>
+        </div>
+
+        <!-- Корзина -->
+        <div id="cart" class="cart">
+          <h3>Корзина</h3>
+          <p>Ваши товары:</p>
+          <!-- Содержимое корзины -->
+        </div>
+      </div>
+    </header>
+
+    <div class="product-page">
+      <div class="product-container">
+        <img src="img/glow.png" alt="Хайлайтер Glow" />
+        <div class="product-info">
+          <h1>Хайлайтер Glow</h1>
+          <p>
+            Хайлайтер Glow — это идеальный продукт для создания сияющей,
+            здоровой кожи. Его легкая и воздушная текстура придает лицу
+            естественное сияние, подчеркивая черты и создавая эффект свежести.
+            Хайлайтер прекрасно адаптируется к любому типу кожи, не утяжеляя
+            макияж, и стойко держится весь день, даря коже естественное и мягкое
+            свечение.
+          </p>
+          <span class="price">22 €</span>
+          <button class="buy-btn">Добавить в корзину</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Форма заказа -->
+    <div id="order-form" class="order-form">
+      <div class="order-form-container">
+        <h2>Оформить заказ</h2>
+        <label for="name">Имя:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Введите ваше имя"
+          required
+        />
+
+        <label for="email">Электронная почта:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Введите вашу почту"
+          required
+        />
+
+        <button type="submit" class="submit-btn">Подтвердить заказ</button>
+        <button id="close-form" class="close-form-btn">Закрыть</button>
+      </div>
+    </div>
+
+    <!-- 🔥 Спецпредложения Douglas -->
+    <div id="douglas-offers" class="offers">
+      <h2>🔥 Спецпредложения от Douglas</h2>
+      <div class="offers-container">
+        <div class="offer">
+          <img src="img/Douglas-1_700-1.png" alt="Скидка 20%" />
+          <h3>-20% на всю декоративную косметику</h3>
+          <p>При покупке от 50€ получите дополнительную скидку.</p>
+        </div>
+
+        <div class="offer">
+          <img src="img/fershenk.jpg" alt="Подарок при покупке" />
+          <h3>Подарок при покупке!</h3>
+          <p>Купите любой парфюм Dior и получите миниатюру в подарок.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 💄 Реклама других косметических брендов -->
+    <div id="beauty-ads" class="beauty-ads">
+      <h2>💄 Бренды, которым мы доверяем</h2>
+      <div class="ads-container">
+        <div class="ad">
+          <img
+            src="img/Maybelline_New_York-removebg-preview.png"
+            alt="Maybelline"
+          />
+          <h3>Maybelline New York</h3>
+          <p>
+            Попробуйте новую линейку помад Super Stay – до 16 часов стойкости.
+          </p>
+        </div>
+
+        <div class="ad">
+          <img src="img/LOreal-Paris-removebg-preview.png" alt="L'Oreal" />
+          <h3>L'Oreal Paris</h3>
+          <p>Выигрышный уход за кожей и лучшая декоративная косметика.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ⭐ Рекламные предложения других бьюти-магазинов -->
+    <div id="other-beauty-stores" class="beauty-stores">
+      <h2>⭐ Лучшие предложения из других магазинов</h2>
+      <div class="stores-container">
+        <div class="store">
+          <img src="img/Sephora.webp" alt="Sephora" />
+          <h3>Sephora</h3>
+          <p>Скидки до 30% на избранные товары! Только до конца месяца.</p>
+        </div>
+
+        <div class="store">
+          <img src="img/nocibe_logo.jpg" alt="Nocibé" />
+          <h3>Nocibé</h3>
+          <p>Получите подарочный набор при покупке от 60€.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
